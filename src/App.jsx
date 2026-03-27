@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { BookOpen, List as ListIcon, MessageCircle, Play, Volume2, ArrowLeft, Clock, BarChart } from 'lucide-react';
 
 // ================= 配置区域 =================
-const LLM_API_KEY = "sk-5ed1337ac3374aefb6ac9e23abb0c6d6"; // 你的 DeepSeek API Key
+// 改成这样，它会自动去 Vercel 的保险箱里找 Key
+const LLM_API_KEY = import.meta.env.VITE_LLM_API_KEY;// 你的 DeepSeek API Key
 const LLM_API_URL = "/api/llm/chat/completions";
 const RSS_FEED_URL = "http://feeds.bbci.co.uk/news/world/rss.xml";
 const RSS_API_URL = `https://api.rss2json.com/v1/api.json?rss_url=${RSS_FEED_URL}`;
